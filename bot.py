@@ -42,6 +42,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # Dependencies:
 # mechanize => http://pypi.python.org/pypi/mechanize/0.1.7b
 # BeautifulSoup => https://pypi.python.org/pypi/beautifulsoup4
+# html2text => https://pypi.python.org/pypi/html2text
 
 import os
 import re
@@ -51,7 +52,6 @@ import getpass
 import optparse
 import cookielib
 import mechanize
-import html2text
 
 try:
     from mechanize import Browser
@@ -64,6 +64,12 @@ try:
 except:
     print "BeautifulSoup required but missing"
     sys.exit(1)
+    
+try:
+    import html2text
+except:
+    print "html2text required but missing"
+    sys.exit(1)
 
 extns = {'C++':'cpp','C':'c','Java':'java'}
     
@@ -72,7 +78,7 @@ def getext(str):
     return extns[key]
 
 def getSolutions ():
-    global br, username, password
+    global br, username
 
     # Browser
     br = Browser()
@@ -132,7 +138,7 @@ def getSolutions ():
                 else:
                     code = code + words[1] + '\n'
             
-        fp = open( os.path.join("/home/gaurav/CodeChef/Jignesh", filename), "w")
+        fp = open(filename, "w")
         fp.write (code)
         fp.close()
         print "Downloaded file "+filename
