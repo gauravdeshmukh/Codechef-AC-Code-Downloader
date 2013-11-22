@@ -3,17 +3,16 @@
 
 '''
 
-             _____ _____ _____    __    _           _
-            |   __|  _  |     |__|  |  | |_ ___ ___| |_ _ _ ___
-            |__   |   __|  |  |  |  |  | . | .'|  _| '_| | | . |
-            |_____|__|  |_____|_____|  |___|__,|___|_,_|___|  _|
-                                                           |_|
-                                    by Abhishek Mishra      <ideamonk@gmail.com >
-                                       Shashwat Anand  <anand.shashwat@gmail.com> 
+                         _           _
+                        | |_ ___ ___| |_ _ _ ___
+                        | . | .'|  _| '_| | | . |
+                        |___|__,|___|_,_|___|  _|
+                                            |_|
+                                    by Gaurav Deshmukh     <gauravdeshmukh42@gmail.com >
 
-Keywords: python, tools, algorithms, spoj
+Keywords: python, tools, algorithms, codechef
 
-Copyright (C) 2003-2004 Free Software Foundation, Inc.
+Copyright (C) 2003-2004 Suttit Tech Ltd.
 
 
 Redistribution and use in source and binary forms, with or without modification,
@@ -42,6 +41,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 '''
 # Dependencies:
 # mechanize => http://pypi.python.org/pypi/mechanize/0.1.7b
+# BeautifulSoup => https://pypi.python.org/pypi/beautifulsoup4
 
 import os
 import re
@@ -95,6 +95,7 @@ def getSolutions ():
         
         br.open("http://www.codechef.com"+l.url)
         ln = list(br.links(url_regex="/viewsolution/"))[0]
+        
         #print "http://www.codechef.com"+ln.url    
         r = br.open("http://www.codechef.com"+ln.url)
 
@@ -118,7 +119,7 @@ def getSolutions ():
 
         lines.pop(0)
         comment = lines[0].split('.',1)[1]
-        #code = code + "//" + comment+'\n'
+
         filename = comment.split(',')[1].split(' ')[2]+'.'+ext
         lines.pop(0)
         lines.pop(0)
