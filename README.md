@@ -7,6 +7,6 @@ Enter username of user whose codes you want to download!
 
 That's it.
 
-By default files are save to the same folder, in which script resides
+By default, files are saved in the same folder, in which script resides
 
 Enjoy :)
