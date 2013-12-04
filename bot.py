@@ -12,7 +12,7 @@
 
 Keywords: python, tools, algorithms, codechef
 
-Copyright (C) 2003-2004 Suttit Tech Ltd.
+Copyright (C) 2013-2014 Suttit Tech Ltd.
 
 
 Redistribution and use in source and binary forms, with or without modification,
